@@ -13,7 +13,7 @@ class Features extends Component {
 					<li key={index} className='feature__item'>
 						<div
 							className={featureClass}
-							onClick={e => this.updateFeature(key, item)}>
+							onClick={() => this.props.updateFeature(key, item)}>
 							{item.name}(
 							{new Intl.NumberFormat('en-US', {
 								style: 'currency',

@@ -27,16 +27,16 @@ class App extends Component {
 				}
 			}
 		};
+		this.updateFeature = this.updateFeature.bind(this);
 	}
-
 	updateFeature(feature, newValue) {
+		console.log(feature, newValue);
 		const selected = Object.assign({}, this.state.selected);
 		selected[feature] = newValue;
 		this.setState({
 			selected
 		});
 	}
-
 	render() {
 		return (
 			<div className='App'>
@@ -45,7 +45,7 @@ class App extends Component {
 					<Features
 						features={this.props.features}
 						selected={this.state.selected}
-						onClick={this.updateFeature()}
+						updateFeature={this.updateFeature}
 					/>
 					<Summary selected={this.state.selected} />
 				</main>
